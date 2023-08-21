@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name=”description” content="description">
-    <link rel="shortcut icon" type="image/png" href="assets/img/JG_Icon.png" sizes="16x16">
+    <link rel="shortcut icon" type="image/png" href="C:\Users\yusuf\OneDrive - uny.ac.id\Coding Bima\IGS\img\JG (1).png" sizes="16x16">
     <!-- CSS Bootsrap ver.4.0 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" media="all">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="C:\Users\yusuf\OneDrive - uny.ac.id\Coding Bima\IGS\style\main.css" type="text/css" media="all"/>
 </head>
 
 
@@ -64,7 +64,7 @@ td {
 
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-      <img src="assets/img/JG_Text.png" width="90" height="40" alt="">
+      <img src="C:\Users\yusuf\OneDrive - uny.ac.id\Coding Bima\IGS\img\JG22.png" width="90" height="40" alt="">
     </a>
 </nav>
 
@@ -221,11 +221,16 @@ td {
 <div class="form-group row">
     <div class="col-sm-4 col-form-label"></div>
     <div class="col-sm-5 input-group ">
-    <a class="btn btn-simulasi-flat" role="button" href="https://juragangadai.github.io/">KEMBALI KE SIMULASI</a>
+    <a class="btn btn-simulasi-flat" role="button" href="https://www.bankmandiritaspen.co.id/simulasi-kredit-pensiun/id">KEMBALI KE SIMULASI</a>
     </div>
 </div>
  </div>
 </div> <!-- container -->
+
+<div class="card mx-auto card-body mb-5 col-sm-10" style="box-shadow: 0px 20px 40px #75B2DD1A; border: 1px solid #D0D8E6; border-radius: 12px;">
+  <iframe src="https://www.appsheet.com/start/70496d1d-05a8-47a1-819e-16b978eaeb36" width="1180" height="568"></iframe>
+
+</div>
 
 </body>
 </html>
@@ -380,21 +385,23 @@ function formatRupiah(angka){
     //var jangka_waktu = jangkawaktu.value;
     var premi_asuransi = premiAsuransi(OTRFix,jangka_waktu);
     var DPmurni = Depe - premi_asuransi
-    var pokokHutang = (OTRFix-DPmurni)+150000
-    var angsuran_pokok = pokokHutang/jangka_waktu;
-    var bunga = pokokHutang*(0.38*(jangka_waktu/12));
-    var bunga_bln = bunga/jangka_waktu;
-    var total_angsuran_bulan = Math.round((angsuran_pokok + bunga_bln)/5000)*5000;
+    var pokokHutang = (OTRFix-DPmurni)
+    //var angsuran_pokok = pokokHutang/jangka_waktu;
+    var bunga = (pokokHutang*0.38)*(jangka_waktu/12);
+    //var bunga_bln = bunga/jangka_waktu;
+    var angsuranAwal = (pokokHutang+bunga+150000)/jangka_waktu
+    var total_angsuran_bulan = Math.round(angsuranAwal/5000)*5000;
 
     $('#input').hide();
     $('#hasil').show();
 
     $('#type_unit').text(type_unit);
     $('#harga_OTR').text(toRp(OTRFix));
-    $('#DP_kons').text(toRp(Depe));
+    $('#DP_kons').text(toRp((Depe)));
     $('#tenor_dipilih').text(jangka_waktu + " Bulan");
     $('#hasil_total_angsuran_bulan').text(toRp(total_angsuran_bulan));
-    $('#hasil_total_angsuran').text(toRp(total_angsuran_bulan * jangka_waktu));
+    $('#hasil_total_angsuran').text(toRp((total_angsuran_bulan * jangka_waktu)));
+    //$('#hasil_total_angsuran').text(toRp(angsuranAwal));
   }
 
 
