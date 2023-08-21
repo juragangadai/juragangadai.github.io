@@ -384,7 +384,7 @@ function formatRupiah(angka){
     var angsuran_pokok = pokokHutang/jangka_waktu;
     var bunga = pokokHutang*(0.38*(jangka_waktu/12));
     var bunga_bln = bunga/jangka_waktu;
-    var total_angsuran_bulan = Math.ceil((angsuran_pokok + bunga_bln)/10000)*10000;
+    var total_angsuran_bulan = Math.ceil((angsuran_pokok + bunga_bln)/5000)*5000;
 
     $('#input').hide();
     $('#hasil').show();
