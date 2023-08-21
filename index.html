@@ -384,17 +384,17 @@ function formatRupiah(angka){
     var angsuran_pokok = pokokHutang/jangka_waktu;
     var bunga = pokokHutang*(0.38*(jangka_waktu/12));
     var bunga_bln = bunga/jangka_waktu;
-    var total_angsuran_bulan = Math.ceil((angsuran_pokok + bunga_bln)/5000)*5000;
+    var total_angsuran_bulan = Math.round((angsuran_pokok + bunga_bln)/5000)*5000;
 
     $('#input').hide();
     $('#hasil').show();
 
     $('#type_unit').text(type_unit);
-    $('#harga_OTR').text(toRp(Math.round(OTRFix)));
-    $('#DP_kons').text(toRp(Math.round(Depe)));
+    $('#harga_OTR').text(toRp(OTRFix));
+    $('#DP_kons').text(toRp(Depe));
     $('#tenor_dipilih').text(jangka_waktu + " Bulan");
-    $('#hasil_total_angsuran_bulan').text(toRp(Math.round(total_angsuran_bulan)));
-    $('#hasil_total_angsuran').text(toRp(Math.round(total_angsuran_bulan * jangka_waktu)));
+    $('#hasil_total_angsuran_bulan').text(toRp(total_angsuran_bulan));
+    $('#hasil_total_angsuran').text(toRp(total_angsuran_bulan * jangka_waktu));
   }
 
 
