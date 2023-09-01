@@ -94,7 +94,7 @@ td {
               <option value="6">TNT 249 S LIME GREEN</option>
               <option value="7">TRK 251</option>
               <option value="8">MOTOBI 200 EFI</option>
-              <option value="9">KEEWAT V250 EFI</option>
+              <option value="9">KEEWAY V250 EFI</option>
               <option value="10">MOTOBI 200 EVO</option>
               <option value="11">LEONCINO 250</option>
               <option value="12">MOTOBI 152</option>
@@ -380,11 +380,11 @@ function formatRupiah(angka){
     //var jangka_waktu = jangkawaktu.value;
     var premi_asuransi = premiAsuransi(OTRFix,jangka_waktu);
     var DPmurni = Depe - premi_asuransi
-    var pokokHutang = (OTRFix-DPmurni)+150000
+    var pokokHutang = OTRFix-DPmurni
     //var angsuran_pokok = pokokHutang/jangka_waktu;
     var bunga = (pokokHutang*0.38)*(jangka_waktu/12);
     //var bunga_bln = bunga/jangka_waktu;
-    var angsuranAwal = (pokokHutang+bunga)/jangka_waktu
+    var angsuranAwal = (pokokHutang+bunga+150000)/jangka_waktu
     var total_angsuran_bulan = Math.ceil(angsuranAwal/5000)*5000;
 
     $('#input').hide();
